@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Route Finder</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+</head>
+<body class="bg-gray-900 text-white">
+
+    <div class="container">
+        <header>
+            <h1>Safe Route Finder</h1>
+            <p>Find the safest path using machine learning analysis of traffic accident data.</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="start">From</label>
+                        <input type="text" id="start" placeholder="e.g., Connaught Place, New Delhi">
+                    </div>
+                    <div class="form-group">
+                        <label for="end">To</label>
+                        <input type="text" id="end" placeholder="e.g., India Gate, New Delhi">
+                    </div>
+                </div>
+                <button id="find-route-btn">
+                    <span id="button-text">Find Safest Route</span>
+                    <div id="loading-spinner" class="spinner hidden"></div>
+                </button>
+                <div id="status-message"></div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-controls">
+                    <button id="toggle-heatmap-btn">Toggle Accident Zones</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
